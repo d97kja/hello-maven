@@ -16,3 +16,9 @@ jobs:
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots compile
         working-directory: complete
+      - name: Test with Maven
+        run: mvn --batch-mode --update-snapshots test
+        working-directory: complete
+      - name: Package with Maven
+        run: mvn --batch-mode --update-snapshots package
+        working-directory: complete
