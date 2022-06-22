@@ -24,6 +24,7 @@ jobs:
         working-directory: complete
       - name: Packaging
         run: mkdir staging && cp target/*.jar staging
+      - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: Package
