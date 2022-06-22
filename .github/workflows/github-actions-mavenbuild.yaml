@@ -19,8 +19,13 @@ jobs:
       - name: Test with Maven
         run: mvn --batch-mode --update-snapshots test
         working-directory: complete
-      - name: Package with Maven
+      - name: Verify with Maven
         run: mvn --batch-mode --update-snapshots verify
         working-directory: complete
-
+      - name: Packaging
+        run: mkdir staging && cp target/*.jar staging
+        uses: actions/upload-artifact@v3
+          with:
+          name: Package
+          path: staging
 
